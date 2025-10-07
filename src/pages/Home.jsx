@@ -2,13 +2,11 @@ import { useEffect, useState } from "react";
 import useGlobalReducer from "../hooks/useGlobalReducer.jsx";
 import { ReedLater } from "../components/ReedLater.jsx";
 import { General } from "../components/General.jsx";
-import { Card } from "../components/Card.jsx";
-import { useNavigate } from "react-router-dom";
 
 export const Home = () => {
 
 	const { store, dispatch } = useGlobalReducer()
-	const navigate = useNavigate()
+
 
 	async function getAlldata(group) {
 		const url = "https://swapi.tech/api/" + group
@@ -29,15 +27,12 @@ export const Home = () => {
 
 	useEffect(() => {
 		async function loadAllData() {
-			// Se recomienda usar Promise.all para cargar todo a la vez
 			const [peopleData, vehicleData, planetData] = await Promise.all([
 				getAlldata("people"),
 				getAlldata("vehicles"),
 				getAlldata("planets"),
-			]);
+			])
 
-			// En lugar de actualizar estados locales, actualizamos el store global con un DISPATCH.
-			// Asume que tu reducer tiene un action type como "SET_ALL_DATA".
 			dispatch({
 				type: "SET_ALL_DATA",
 				payload: {
@@ -48,7 +43,7 @@ export const Home = () => {
 			});
 		}
 		loadAllData();
-	}, []);
+	}, [])
 
 	return (
 

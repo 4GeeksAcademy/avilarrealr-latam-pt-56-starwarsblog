@@ -1,10 +1,10 @@
 import React from "react";
 import useGlobalReducer from "../hooks/useGlobalReducer";
 
-export function LearnMoreMain () {
+export function LearnMoreMain ({name}) {
 
     const { store } = useGlobalReducer()
-    const detail = store.detail.properties
+    // const detail = store.detail.properties
 
 
     return (
@@ -19,7 +19,7 @@ export function LearnMoreMain () {
 
             <div className="col-6">
                 <p className="fs-1 fw-bold">
-                    {detail.name}
+                    {name}
                 </p>
             </div>
         </div>

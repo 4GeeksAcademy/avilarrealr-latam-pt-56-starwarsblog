@@ -26,6 +26,10 @@ export function LearnMoreFooter() {
                 <p className="fw-bold text-uppercase small">Height</p>
                 <p className="small">{detail.height}</p>
             </div>
+            <div className="col">
+                <p className="fw-bold text-uppercase small">Birthday year</p>
+                <p className="small">{detail.birth_year}</p>
+            </div>
         </>
     );
 
@@ -51,6 +55,16 @@ export function LearnMoreFooter() {
                 <p className="fw-bold text-uppercase small">Diameter</p>
                 <p className="small">{detail.diameter}</p>
             </div>
+            <div className="col">
+                <p className="fw-bold text-uppercase small">Gravity</p>
+                <p className="small">{detail.gravity}</p>
+            </div>
+            <div className="col">
+                <p className="fw-bold text-uppercase small">Rotation period</p>
+                <p className="small">{detail.rotation_period}</p>
+            </div>
+
+
         </>
     )
 
@@ -75,6 +89,14 @@ export function LearnMoreFooter() {
             <div className="col">
                 <p className="fw-bold text-uppercase small">Passengers</p>
                 <p className="small">{detail.passengers}</p>
+            </div>
+            <div className="col">
+                <p className="fw-bold text-uppercase small">Max speed</p>
+                <p className="small">{detail.max_atmosphering_speed}</p>
+            </div>
+            <div className="col">
+                <p className="fw-bold text-uppercase small">Class</p>
+                <p className="small">{detail.vehicle_class}</p>
             </div>
             {/* Puedes agregar más campos de VEHICLES aquí (passengers, max_atmosphering_speed, etc.) */}
         </>

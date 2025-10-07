@@ -7,8 +7,9 @@ import useGlobalReducer from "../hooks/useGlobalReducer";
 export function LearnMore() {
 
 
-    const {dispatch} = useGlobalReducer()
+    const {store, dispatch} = useGlobalReducer()
     const { group, id } = useParams()
+
 
     async function getDetail(group, id) {
         const url = `https://swapi.tech/api/${group}/${id}`
@@ -40,11 +41,11 @@ export function LearnMore() {
         };
 
         loadDetail();
-    }, [group, id, dispatch]);
+    }, [group, id]);
 
     return (
         <div className="container">
-            <LearnMoreMain />
+            <LearnMoreMain name={store.detail.properties?.name}/>
             <LearnMoreFooter group={group}/>
         </div >
 
